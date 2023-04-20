@@ -5,8 +5,7 @@ directory = '2019_HurricaneHarvey/US_2019Hurricane_raw_data_FL/hurricane'
 storage = 'DataExtracted'
 
 for count, file in enumerate(os.listdir(directory)):
-    if count == 10:
-        break
+
     f = os.path.join(directory, file)
     wf = os.path.join(storage, str(count)+'.json')
     print('file:', file)

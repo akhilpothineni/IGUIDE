@@ -3,6 +3,8 @@ import re
 import nltk
 import spacy
 import locationtagger
+import geograpy
+
 
 # essential entity models downloads
 # nltk.downloader.download('maxent_ne_chunker')
@@ -37,7 +39,8 @@ def regLoc(text):
     return loc
 
 def locations(text):
-    places = locationtagger.find_locations(text=text)
+    # places = locationtagger.find_locations(text=text)
+    places = geograpy.get_geoPlace_context(text=temp)
     countries = places.countries
     regions = places.regions
     cities = places.cities
